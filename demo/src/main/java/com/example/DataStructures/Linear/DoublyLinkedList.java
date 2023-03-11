@@ -74,5 +74,54 @@ public class DoublyLinkedList {
         current.next = node;
         size++;
     }
+
+    public void sortedInsert(DNode node){
+        if (head == null){
+            head = tail = node;
+            head.next = null;
+            head.previous = null;
+            size++;
+            return;
+        }
+
+        DNode current = head;
+
+        if (!isItSorted()){
+            sort();
+        }
+
+        if (current.data > node.data){
+            this.insertHead(node);
+            return;
+        }
+
+        for (int i = 0; i < size ; i++){
+            if (current.data == node.data){
+                DNode temp = current.next;
+                node.next = temp;
+                temp.previous = node;
+                node.previous = current;
+                current.next = node;
+                size++;
+                return;
+            }
+
+            if(current.next == null){
+                this.insertTail(node);
+                return;
+            }
+
+            if(current.next.data > node.data){
+                DNode temp = current.next;
+                node.next = temp;
+                temp.previous = node;
+                node.previous = current; 
+                current.next = node;
+                size++;
+                return;
+            }
+            current = current.next;
+        }
+    }
     
 }
