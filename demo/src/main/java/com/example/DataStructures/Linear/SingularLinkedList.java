@@ -157,4 +157,21 @@ public class SingularLinkedList{
         }
         
     }
+
+    public SNode search(SNode node){
+        if (head == null){
+            return null;
+        }
+        SNode current = head;
+
+        for(int i = 0 ; i < size ; i++){
+            if(current.data == node.data){
+                System.out.println("Data Found");
+                return node;
+            }
+            current = current.next;
+        }
+        System.out.println("Data not found");
+        return null;
+    }
 }
