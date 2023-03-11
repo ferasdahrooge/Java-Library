@@ -45,4 +45,27 @@ public class SingularLinkedList{
         size++;
         return;
     }
+
+    public void insert(SNode node, int position){
+        if (position < 1 || position > size) {
+            System.out.println("Cannot be added");
+            return;
+        }
+
+        if (position == 1) {
+            insertHead(node);
+            return;
+        }
+        
+        SNode current = head;
+
+        // Loop and stop at the node just before the required position
+        for (int i = position; i > 2; i--) {
+            current = current.next;
+        }
+
+        node.next = current.next;
+        current.next = node;
+        size++;
+    }
 }
