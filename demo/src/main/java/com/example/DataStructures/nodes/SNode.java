@@ -1,5 +1,5 @@
 // This class defines the Node DataStructure
-public class SingularNode {
+public class SNode {
     public int data;
     public SNode next = null
 
