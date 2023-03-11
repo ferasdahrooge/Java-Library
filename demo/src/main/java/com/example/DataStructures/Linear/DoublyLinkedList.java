@@ -193,4 +193,16 @@ public class DoublyLinkedList {
         System.out.println("Data not found");
         return null;
     }
+
+    public void deleteHead(){
+        if (head == null) return;
+        
+        DNode temp = head;
+        head = head.next;
+        temp.next = null;
+        head.previous = null;
+        size--;
+        return;
+    }
+
 }
