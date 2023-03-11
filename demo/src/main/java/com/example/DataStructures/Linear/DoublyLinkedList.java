@@ -8,13 +8,13 @@ public class DoublyLinkedList {
     public DNode tail;
     public int size;
 
-    public DLL(){
+    public DoublyLinkedList(){
         this.head = null;
         this.tail = null;
         this.size = 0;
     }
 
-    public DLL(DNode node) {
+    public DoublyLinkedList(DNode node) {
         this.head = node;
         this.tail = node;
         this.size = 1;
