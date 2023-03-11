@@ -68,4 +68,50 @@ public class SingularLinkedList{
         current.next = node;
         size++;
     }
+
+    public void sort(){
+        if (size == 0) return;
+        if (size == 1) return;
+
+        SNode current = head;
+        
+        for(int i = 0; i < size; i++){
+            boolean sorted = false;
+
+            if (current.next == null || current.next == head) break;
+
+            if (current.data > current.next.data) {
+                SNode innerCurrent = head;
+
+                // Disconnect the node
+                SNode temp = current.next;
+                current.next = temp.next;
+                temp.next = null;
+
+                for (int j = 0; j <= i; j++) {
+                    if (temp == tail) tail = current;
+
+                    if (innerCurrent == head && temp.data < innerCurrent.data) {
+                        if (tail.next != null) tail.next = temp;
+                        temp.next = head;
+                        head = temp;
+                        sorted = true;
+                        break;
+                    }
+
+                    if (temp.data < innerCurrent.next.data) {
+                        temp.next = innerCurrent.next;
+                        innerCurrent.next = temp;
+                        sorted = true;
+                        break;
+                    }
+
+                    innerCurrent = innerCurrent.next;
+                }
+            }
+
+            if (sorted) continue;
+            current = current.next;
+        }
+    }
 }
