@@ -31,4 +31,18 @@ public class SingularLinkedList{
         size++;
         return;
     }
+
+    public void insertTail(SNode node){
+        if (head == null) {
+            head = node;
+            tail = node;
+            size++;
+            return;
+        }
+
+        tail.next = node;
+        tail = node;
+        size++;
+        return;
+    }
 }
