@@ -256,4 +256,10 @@ public class DoublyLinkedList {
         }
     }
 
+    public void clear(){
+        head = null;
+        tail = null;
+        size = 0;
+    }
+
 }
