@@ -234,4 +234,10 @@ public class SingularLinkedList{
         }
     }
 
+    public void clear(){
+        head = null;
+        tail = null;
+        size = 0;
+    }
+
 }
