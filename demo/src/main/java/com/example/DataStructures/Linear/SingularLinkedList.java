@@ -174,4 +174,13 @@ public class SingularLinkedList{
         System.out.println("Data not found");
         return null;
     }
+
+    public void deleteHead(){
+        if (head == null) return;
+
+        head = head.next;
+        size--;
+        return;
+    }
+
 }
