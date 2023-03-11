@@ -252,4 +252,24 @@ public class SingularLinkedList{
         return true;
     }
 
+    public void print(){
+        if (head == null){
+            System.out.println("Empty list");
+            System.out.println("size of the list: " + size);
+            System.out.println("No list to check if it's sorted");
+        }else{
+            System.out.println("size of the list: " + size);
+            System.out.println("Head of the node: " + head.data);
+            System.out.println("Tail of the node: " + tail.data);
+            System.out.println(isItSorted() ? "It is sorted!" : "It is not sorted!");
+
+            SNode current = head;
+
+            for (int i = 0; i < size; i++) {
+                current.print();
+                current = current.next;
+            }
+        }
+    }
+
 }
