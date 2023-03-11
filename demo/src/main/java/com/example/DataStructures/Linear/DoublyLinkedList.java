@@ -19,5 +19,20 @@ public class DoublyLinkedList {
         this.tail = node;
         this.size = 1;
     }
+
+    public void insertHead(DNode node){
+        if (head == null) {
+            head = node;
+            tail = node;
+            size++;
+            return;
+        }
+
+        head.previous = node;
+        node.next = head;
+        head = node;
+        size++;
+        return;
+    }
     
 }
