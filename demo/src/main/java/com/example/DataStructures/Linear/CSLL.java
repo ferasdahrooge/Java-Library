@@ -47,4 +47,35 @@ public class CSLL extends SingularLinkedList {
         size++;
         return;
     }
+
+    public void insert(SNode node, int position){
+        if (position < 1 || position > size) {
+            System.out.println("Cannot be added");
+            return;
+        }
+
+        if (position == 1) {
+            insertHead(node);
+            return;
+        }
+
+        SNode current = head;
+
+        if (position == 2){
+            node.next = current.next;
+            current.next = node;
+            size++;
+            return;
+        }
+
+        for (int i = position; i > 2; i--){
+            current = current.next;
+        }
+
+        node.next = current.next;
+        current.next = node;
+        tail.next = head;
+        size++;
+
+    }
 }
