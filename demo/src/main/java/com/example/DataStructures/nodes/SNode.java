@@ -1,3 +1,4 @@
+package com.example.DataStructures.nodes;
 // This class defines the Node DataStructure
 public class SNode {
     public int data;
