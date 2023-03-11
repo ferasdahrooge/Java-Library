@@ -31,4 +31,20 @@ public class CSLL extends SingularLinkedList {
         size++;
         return;
     }
+
+    public void insertTail(SNode node){
+        if (head == null) {
+            head = node;
+            tail = node;
+            node.next = node;
+            size++;
+            return;
+        }
+
+        tail.next = node;
+        node.next = head;
+        tail = node;
+        size++;
+        return;
+    }
 }
