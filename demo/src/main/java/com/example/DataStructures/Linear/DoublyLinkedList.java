@@ -262,4 +262,17 @@ public class DoublyLinkedList {
         size = 0;
     }
 
+    public boolean isItSorted(){
+        DNode current = head;
+
+        for (int i = 0; i < size; i++) {
+            if (current == tail) break;
+            if (current.data > current.next.data) return false;
+            current = current.next;
+        }
+
+        return true;
+    }
+}
+
 }
