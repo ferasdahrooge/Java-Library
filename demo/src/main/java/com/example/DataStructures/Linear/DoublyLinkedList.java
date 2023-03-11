@@ -229,4 +229,31 @@ public class DoublyLinkedList {
         }
     }
 
+    public void delete(DNode node){
+        if (head == null) return;
+
+        DNode current = head;
+        if (current.data == node.data) {
+            this.deleteHead();
+            return;
+        }
+        
+        for (int i = 0; i < size; i++) {
+            if (i == (size-2)){
+                this.deleteTail();
+                return;
+            }
+            if (current.next == node) {
+                DNode tempNode = current.next;
+                current.next.next.previous = current.next.previous;
+                current.next = current.next.next;
+                tempNode.next = null;
+                tempNode.previous = null;
+                size--;
+                return;
+            }
+            current = current.next;
+        }
+    }
+
 }
