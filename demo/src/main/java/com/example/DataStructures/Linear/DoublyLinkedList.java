@@ -205,4 +205,28 @@ public class DoublyLinkedList {
         return;
     }
 
+    public void deleteTail(){
+        if (head == null) return;
+
+        DNode current = head;
+
+        if (size == 1) {
+            head = null;
+            tail = null;
+            size--;
+            return;
+        }
+
+        for (int i = 0; i < size; i++) {
+            if (current.next.next == null){
+                current.next.previous = null;
+                current.next = null;
+                tail = current;
+                size--;
+                return;
+            }
+            current = current.next;
+        }
+    }
+
 }
