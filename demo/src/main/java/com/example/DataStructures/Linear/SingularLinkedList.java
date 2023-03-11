@@ -206,4 +206,32 @@ public class SingularLinkedList{
         }
     }
 
+    public void delete(SNode node){
+        if (head == null) return;
+
+        SNode current = head;
+
+        if (size == 1) {
+            this.deleteHead();
+            return;
+        }
+        
+        for (int i = 0; i < size; i++) {
+
+            if (i == size-2){
+                this.deleteTail();
+                return;
+            }
+
+            if (current.next == node) {
+                SNode temp = current.next;
+                current.next = current.next.next;
+                temp.next = null;
+                size--;
+                return;
+            }
+            current = current.next;
+        }
+    }
+
 }
