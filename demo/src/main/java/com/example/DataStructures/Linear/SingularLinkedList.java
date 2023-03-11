@@ -183,4 +183,27 @@ public class SingularLinkedList{
         return;
     }
 
+    public void deleteTail(){
+        if (head == null) return;
+
+        SNode current = head;
+
+        if (size == 1) {
+            head = null;
+            tail = null;
+            size--;
+            return;
+        }
+
+        for (int i = 0; i < size; i++) {
+            if (current.next.next == null){
+                current.next = null;
+                tail = current;
+                size--;
+                return;
+            }
+            current = current.next;
+        }
+    }
+
 }
