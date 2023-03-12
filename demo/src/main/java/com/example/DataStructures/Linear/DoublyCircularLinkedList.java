@@ -16,4 +16,23 @@ public class DoublyCircularLinkedList extends DoublyLinkedList{
         node.previous = node;
         this.size = 1;
     }
+
+    public void insertHead(DNode node) {
+        if (head == null) {
+            head = node;
+            tail = node;
+            node.next = node;
+            node.previous = tail;
+            size++;
+            return;
+        }
+
+        tail.next = node;
+        node.next = head;
+        head.previous = node;
+        node.previous = tail;
+        head = node;
+        size++;
+        return;
+    }
 }
