@@ -12,4 +12,11 @@ public class Queuell extends SLL{
         super.deleteHead();
     }
 
+    public boolean isEmpty(){
+        return size == 0;
+    }
+
+    public void clear(){
+        super.clear();
+    }
 }
