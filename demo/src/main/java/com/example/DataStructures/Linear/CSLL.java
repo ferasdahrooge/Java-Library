@@ -122,4 +122,21 @@ public class CSLL extends SingularLinkedList {
         }
         
     }
+
+    public void deleteHead(){
+        if (head == null) return;
+
+        if (size == 1) {
+            head = null;
+            tail = null;
+            size--;
+        }
+
+        SNode temp = head;
+        tail.next = head.next;
+        head = head.next;
+        temp.next = null;
+        size--;
+        return;
+    }
 }
