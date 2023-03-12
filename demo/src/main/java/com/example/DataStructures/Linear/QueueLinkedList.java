@@ -2,7 +2,7 @@ package com.example.DataStructures.Linear;
 
 import com.example.DataStructures.nodes.SNode;
 
-public class Queuell extends SLL{
+public class QueueLinkedList extends SLL{
 
     public void enqueue(SNode node){
         super.insertTail(node);
@@ -73,7 +73,7 @@ public class Queuell extends SLL{
     @Override
     public void delete(SNode node){
     }
-    
+
     public void peek(){
         System.out.println("Peeking...Head = " + head.data);
     }

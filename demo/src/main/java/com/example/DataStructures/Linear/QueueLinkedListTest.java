@@ -1,10 +1,10 @@
-package com.example.DataStructures.Linear;
+package com.example.dataStructures.Linear;
 
-import com.example.DataStructures.nodes.SNode;
+import com.example.dataStructures.nodes.SNode;
 
-public class StackLinkedListTest {
+public class QueueLinkedListTest {
     public static void main(String[] args) {
-        StackLinkedList list = new StackLinkedList();
+        QueueLinkedList list = new QueueLinkedList();
         SNode node1 = new SNode(1);
         SNode node2 = new SNode(2);
         SNode node3 = new SNode(3);
@@ -13,14 +13,12 @@ public class StackLinkedListTest {
         SNode node6 = new SNode(6);
         SNode node7 = new SNode(7);
 
-        list.push(node1);
-        list.push(node2);
-        list.push(node3);
-        list.isEmpty();
-        list.pop();
-        list.peek();
+        list.enqueue(node1);
+        list.enqueue(node2);
+        list.enqueue(node3);
+        list.enqueue(node4);
+        list.dequeue();
         list.print();
-
     }
     
 }
