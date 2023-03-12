@@ -23,4 +23,12 @@ public class TNode {
         this.left = R;
 
     }
+
+      // Data setter getter
+      public int getData(){
+        return this.data;
+    }
+    public void setData(int data){
+        this.data = data;
+    }
 }
