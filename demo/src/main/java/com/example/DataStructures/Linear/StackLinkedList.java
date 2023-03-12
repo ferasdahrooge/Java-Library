@@ -13,4 +13,8 @@ public class StackLinkedList extends SingularLinkedList{
     public void pop(){
         super.deleteHead();
     }
+
+    public boolean isEmpty(){
+        return size == 0;
+    }
 }
