@@ -137,4 +137,23 @@ public class DoublyCircularLinkedList extends DoublyLinkedList{
             current = current.next;
         }
     }
+    public void deleteHead(){
+        if (head == null) return;
+
+        if (size == 1){
+            head = null;
+            tail = null;
+            size--;
+        }
+
+        DNode temp = head;
+        tail.next = head.next;
+        head = head.next;
+        head.previous = tail;
+        temp.previous = null;
+        temp.next = null;
+        size --;
+        return;
+        
+    }
 }
