@@ -75,4 +75,33 @@ public class StackLinkedList extends SingularLinkedList{
 
     }
 
+    @Override
+    public boolean isItSorted(){
+        return false;
+    }
+
+    public void print(){
+        if (isEmpty()){
+            System.out.println("Empty Stack");
+            System.out.println("height of the stack: " + size);
+            System.out.println("No Stack to check if it's sorted");
+        }else{
+            System.out.println("Stack is not Empty");
+            System.out.println("size of the Stack: " + size);
+            System.out.println("Top of the stack: " + head.data);
+            System.out.println("*************");
+            System.out.println("*************");
+            SNode current = head;
+            
+            System.out.println("The Stack\n");
+            System.out.println("Top");
+            System.out.println("------------------------------");
+            for (int i = 0; i < size; i++) {
+                current.print();
+                current = current.next;
+            }
+            System.out.println("Bottom");
+        }
+    }
+
 }
