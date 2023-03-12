@@ -31,4 +31,14 @@ public class TNode {
     public void setData(int data){
         this.data = data;
     }
+
+    // left setter getter
+    public TNode getLeft(){
+        return this.left;
+    }
+    public void setLeft(TNode node){
+        this.left = node;
+    }
+
+
 }
