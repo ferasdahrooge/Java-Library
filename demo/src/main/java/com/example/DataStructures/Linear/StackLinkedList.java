@@ -25,4 +25,9 @@ public class StackLinkedList extends SingularLinkedList{
         System.out.println("Peeking... the data is : "+ head.data);
         return;
     }
+
+    public SNode search(SNode node){
+        super.search(node);
+        return node;
+    }
 }
