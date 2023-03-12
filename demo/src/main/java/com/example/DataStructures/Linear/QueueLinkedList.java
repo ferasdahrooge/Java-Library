@@ -8,4 +8,8 @@ public class Queuell extends SLL{
         super.insertTail(node);
     }
 
+    public void dequeue(){
+        super.deleteHead();
+    }
+
 }
