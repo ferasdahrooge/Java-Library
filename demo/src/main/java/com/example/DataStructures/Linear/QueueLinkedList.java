@@ -41,4 +41,36 @@ public class Queuell extends SLL{
             }
         }
     }
+
+    @Override
+    public void sort(){
+        
+    }
+
+    @Override
+    public void insertHead(SNode node){
+    }
+
+    @Override
+    public void insertTail(SNode node){
+    }
+    @Override
+    public void insert(SNode node, int position){
+    }
+
+    @Override
+    public void sortedInsert(SNode node){
+    }
+
+    @Override
+    public void deleteHead(){
+    }
+
+    @Override
+    public void deleteTail(){
+    }
+
+    @Override
+    public void delete(SNode node){
+    }
 }
