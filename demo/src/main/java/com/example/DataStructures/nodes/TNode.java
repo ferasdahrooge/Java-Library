@@ -55,5 +55,14 @@ public class TNode {
         this.parent = node;
     }
 
+      // balance getter and setter
+      public int getBalance(){
+        return this.balance;
+    }
+
+    public void setBalance(int balance){
+        this.balance = balance;
+    }
+
 
 }
