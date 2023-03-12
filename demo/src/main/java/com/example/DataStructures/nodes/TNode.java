@@ -47,6 +47,13 @@ public class TNode {
     public void setRight(TNode node){
         this.right = node;
     }
+    // parent getter and setter
+    public TNode getParent(){
+        return this.parent;
+    }
+    public void setParent(TNode node){
+        this.parent = node;
+    }
 
 
 }
