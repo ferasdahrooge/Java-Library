@@ -10,4 +10,7 @@ public class StackLinkedList extends SingularLinkedList{
         super.insertHead(node);
     }
 
+    public void pop(){
+        super.deleteHead();
+    }
 }
