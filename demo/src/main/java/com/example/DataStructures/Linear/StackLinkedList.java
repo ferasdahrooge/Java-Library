@@ -30,4 +30,9 @@ public class StackLinkedList extends SingularLinkedList{
         super.search(node);
         return node;
     }
+
+    public void clear(){
+        super.clear();
+    }
+
 }
