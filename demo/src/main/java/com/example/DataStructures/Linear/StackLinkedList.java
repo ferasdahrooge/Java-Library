@@ -17,4 +17,12 @@ public class StackLinkedList extends SingularLinkedList{
     public boolean isEmpty(){
         return size == 0;
     }
+
+    public void peek(){
+        if(isEmpty()){
+            throw new EmptyStackException();
+        }
+        System.out.println("Peeking... the data is : "+ head.data);
+        return;
+    }
 }
