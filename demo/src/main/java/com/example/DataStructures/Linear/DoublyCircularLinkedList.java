@@ -53,4 +53,39 @@ public class DoublyCircularLinkedList extends DoublyLinkedList{
         size++;
         return;
     }
+
+
+    public void insert(DNode node, int position){
+        if (position < 1 || position > size) {
+            System.out.println("Cannot be added");
+            return;
+        }
+        System.out.println(size);
+        if (position == 1) {
+            insertHead(node);
+            return;
+        }
+
+        DNode current = head;
+
+        if (position == 2){
+            node.next = current.next;
+            node.previous = current;
+            current.next.previous = node;
+            current.next = node;
+            size++;
+            return;
+        }
+
+        for (int i = position; i > 2; i--){
+            current = current.next;
+        }
+
+        node.next = current.next;
+        node.previous = current;
+        current.next.previous = node;
+        current.next = node;
+        size++;
+
+    }
 }
