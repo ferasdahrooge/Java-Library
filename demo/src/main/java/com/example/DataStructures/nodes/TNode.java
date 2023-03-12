@@ -40,5 +40,13 @@ public class TNode {
         this.left = node;
     }
 
+    //right getter setter
+    public TNode getRight(){
+        return this.right;
+    }
+    public void setRight(TNode node){
+        this.right = node;
+    }
+
 
 }
