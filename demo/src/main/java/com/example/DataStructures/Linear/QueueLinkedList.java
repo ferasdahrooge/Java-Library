@@ -19,4 +19,26 @@ public class Queuell extends SLL{
     public void clear(){
         super.clear();
     }
+
+    public void print(){
+        if (isEmpty()){
+            System.out.println("Empty Queue");
+            System.out.println("size of the Queue: " + size);
+            System.out.println("No Queue to check if it's sorted");
+        }else{
+            System.out.println("Queue is not Empty");
+            System.out.println("size of the Queue: " + size);
+            System.out.println("Front of the Queue: " + head.data);
+            System.out.println("Rear of the Queue: " + tail.data);
+            System.out.println("*************");
+            System.out.println("*************");
+            SNode current = head;
+            
+            System.out.println("The Queue\n");
+            for (int i = 0; i < size; i++) {
+                System.out.print(current.data + "  ");
+                current = current.next;
+            }
+        }
+    }
 }
