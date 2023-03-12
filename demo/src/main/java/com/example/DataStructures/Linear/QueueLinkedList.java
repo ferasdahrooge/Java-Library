@@ -73,4 +73,8 @@ public class Queuell extends SLL{
     @Override
     public void delete(SNode node){
     }
+    
+    public void peek(){
+        System.out.println("Peeking...Head = " + head.data);
+    }
 }
