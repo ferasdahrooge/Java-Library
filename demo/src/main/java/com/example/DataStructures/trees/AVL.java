@@ -31,4 +31,25 @@ public class AVL extends BST{
   public TNode setRoot(TNode node) {
       return super.setRoot(node);
   }
+
+  private void rebalance(TNode node){
+    if(node.getBalance() > 0) {
+        if(node.getRight().getBalance() < 0){
+            rightRotation(node.getRight());
+            leftRotation(node);
+        }
+        else {
+            leftRotation(node);
+        }
+    }
+    else if (node.getBalance() < 0){
+        if (node.getLeft().getBalance() > 0){
+            leftRotation(node.getLeft());
+            rightRotation(node);
+        } 
+        else {
+            rightRotation(node);
+        }
+    }
+}
 }
