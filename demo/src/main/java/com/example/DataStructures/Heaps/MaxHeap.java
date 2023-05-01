@@ -127,6 +127,23 @@ public class MaxHeap {
     // heapify down
     heapify_down(0);
     return;
-}
+  }
+  public void print(){
+    String line = new String(new char[5]);
+    System.out.print("Parent index: ");
+    for (int i = 0; i< elements.size() ; i++){
+        String parent = String.valueOf(parent(i));
+        String parentInLine = line.format("%8s",parent);
+        System.out.print(parentInLine);
+    }
+    System.out.println();
+    System.out.print("Element Heap: ");
+    for (int i = 0 ; i < elements.size() ; i++){
+        String numberAdded = String.valueOf(elements.get(i));
+        String numbersInLine = line.format("%8s",numberAdded);
+        System.out.print(numbersInLine);
+
+    }
+  }
 
 }
