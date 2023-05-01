@@ -74,5 +74,25 @@ public class AVL extends BST{
             updateBalance(node.getParent());
         }
     }
-}
+  }
+  private void rightRotation(TNode node){
+    TNode left = node.getLeft();
+    node.setLeft(left.getRight());
+    if (left.getRight() != null){
+        left.getRight().setParent(node);
+    }
+    left.setParent(node.getParent());
+    if (node.getParent() == null){
+        this.root = left;
+    } else if (node.getData() == node.getParent().getRight().getData()){
+        node.getParent().setRight(left);
+    } else {
+        node.getParent().setLeft(left);
+    }
+    left.setRight(node);
+    node.setParent(left);
+    // Update the balances between the nodes
+    node.setBalance(node.getBalance() + 1 - Math.min(0, left.getBalance()));
+    left.setBalance(left.getBalance() + 1 + Math.max(0, node.getBalance()));
+  }
 }
