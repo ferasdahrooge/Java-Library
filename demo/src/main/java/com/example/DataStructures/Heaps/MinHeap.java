@@ -23,4 +23,10 @@ public class MinHeap{
             insert(array[i]);
         }
     }
+   
+    public void clear(){
+      elements.setSize(0);
+      return;
+    }
+
 }
