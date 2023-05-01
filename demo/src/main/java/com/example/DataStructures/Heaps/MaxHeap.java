@@ -146,4 +146,43 @@ public class MaxHeap {
     }
   }
 
+  public void sort(){
+    // Turn the into a min heap to sort it in the descending order
+    for (int i = 1; i < getSize(); i++)
+    {
+      // if child is bigger than parent
+      if (elements.get(i) < elements.get((i - 1) / 2))
+      {
+        int j = i;
+ 
+        // close to heapify but to turn it into a max heap
+        while (elements.get(j) < elements.get((j - 1) / 2))
+        {
+          swap(j, (j-1)/2);
+          j = (j - 1) / 2;
+        }
+      }
+    }
+    // Start sorting
+    for (int i = getSize() - 1 ; i > 0; i-- ){
+
+        swap(0, i);
+        // similar to the heapify method going down, but instead the size is adjusted
+        int j = 0, index;
+
+        do{
+            index = 2*j + 1;
+            
+            if(index < (i-1) && elements.get(index) > elements.get(index+1)) index++;
+
+            if (index < i && elements.get(j) > elements.get(index)) {
+                swap(j, index);
+            }
+            j = index;
+        } 
+        while(index < i);
+    }
+
+  }
+
 }
