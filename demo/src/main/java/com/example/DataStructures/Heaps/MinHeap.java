@@ -47,4 +47,9 @@ public class MinHeap{
         return (2*i +2);
     }
 
+    // getter for the size of the vector
+    public int getSize(){
+      return elements.size();
+    }
+
 }
