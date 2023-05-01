@@ -111,4 +111,13 @@ public class MinHeap{
       }
     }
 
+    public void insert(Integer key)
+    {
+        // insert a new element at the end of the vector
+        elements.addElement(key);
+        int index = getSize() - 1;
+        // heapify based on posiiton of the element in the heap
+        heapifyUp(index);
+    }
+
 }
