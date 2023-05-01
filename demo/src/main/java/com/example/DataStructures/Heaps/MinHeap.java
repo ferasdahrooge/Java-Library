@@ -86,4 +86,29 @@ public class MinHeap{
       }
     }
 
+    private void heapifyDown(int i){
+      // get left and right child of node at index i
+      int left = left(i);
+      int right = right(i);
+      int smallest = i;
+
+      // compare the values and index values in the vector
+      if (left < getSize() && elements.get(left) < elements.get(i)) {
+          // the left becomes the smallest index
+          smallest = left;
+      }
+      if (right < getSize() && elements.get(right) < elements.get(smallest)) {
+          // the right becomes the smallest index
+          smallest = right;
+      }
+      if (smallest != i)
+      {
+          // swap with a child having lesser value
+          swap(i, smallest);
+
+          // repeat going downards
+          heapifyDown(smallest);
+      }
+    }
+
 }
