@@ -135,6 +135,21 @@ public class MinHeap{
           String numbersInLine = line.format("%8s",numberAdded);
           System.out.print(numbersInLine);
       }
-  }
+    }
+
+    public void delete(Integer key){
+      if(!elements.contains(key)){
+          System.out.println("Key to delete doesn't exist");
+          return;  
+      } 
+
+      Integer i = elements.indexOf(key);
+      swap(getSize()-1 ,i);
+      // Decrease size of heap by 1
+      elements.setSize(getSize()-1);
+      // heapify down
+      heapifyDown(0);
+      return;
+    } 
 
 }
