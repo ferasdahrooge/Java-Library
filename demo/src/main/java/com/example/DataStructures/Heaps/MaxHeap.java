@@ -104,4 +104,13 @@ public class MaxHeap {
       heapify_up(index);
   }
 
+  public int contains(Integer i) {
+    if (elements.contains(i) == true) {
+        System.out.println("Value " + i + " exists");
+        return i;
+    }
+    System.out.println("Value " + i + " does not exists");
+    return 0;
+  }
+
 }
