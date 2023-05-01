@@ -78,4 +78,119 @@ public class BST {
           traversedNode.setRight(node);
       }
     }
+    public void delete(TNode node_to_delete){
+      if(root == null) return;
+      
+      TNode current = root;
+      while(current != null){
+          // traverse
+          if (node_to_delete.getData() > current.getData()){
+              current = current.getRight();
+              continue;
+          
+          }
+          if (node_to_delete.getData() < current.getData()){
+              current = current.getLeft();
+              continue;
+          }
+          if (node_to_delete.getData() == current.getData()){
+          // if two children
+              if(current.getRight() != null && current.getLeft() != null){
+                  TNode node_to_iterate = current.getLeft();
+                  
+                  if(node_to_iterate.getParent().getLeft().getData() == node_to_iterate.getData()){
+                      if(node_to_iterate.getRight() == null){
+                          node_to_iterate.setParent(current.getParent());
+                          node_to_iterate.setRight(current.getRight());
+                          node_to_iterate.getRight().setParent(node_to_iterate);
+                          if(current.getParent().getLeft().getLeft().getData() == node_to_iterate.getData()) {
+                              node_to_iterate.getParent().setLeft(node_to_iterate);
+                          }else if (current.getParent().getRight().getLeft().getData() == node_to_iterate.getData()){ 
+                              node_to_iterate.getParent().setRight(node_to_iterate);
+                          }
+
+                      }else{
+                          while(node_to_iterate.getRight()!= null){
+                              node_to_iterate = node_to_iterate.getRight();
+                          }
+
+                          node_to_iterate.getParent().setRight(node_to_iterate.getLeft());
+                          if (node_to_iterate.getLeft() != null) node_to_iterate.getLeft().setParent(node_to_iterate.getParent());
+                          if (current.getParent() == null){
+                              root = node_to_iterate;
+                              node_to_iterate.setParent(null);
+                              node_to_iterate.setLeft(current.getLeft());
+                              node_to_iterate.setRight(current.getRight());
+                              node_to_iterate.getRight().setParent(node_to_iterate.getRight());
+                              node_to_iterate.getLeft().setParent(node_to_iterate.getLeft());
+                          }else{
+                              TNode left_node = current.getLeft();
+                              node_to_iterate.setParent(current.getParent());
+                              node_to_iterate.setRight(current.getRight());
+                              node_to_iterate.setLeft(current.getLeft());
+                              node_to_iterate.getRight().setParent(node_to_iterate);
+                              node_to_iterate.getLeft().setParent(node_to_iterate);
+                              if(current.getParent().getLeft().getLeft().getData() == left_node.getData()) {
+                                  node_to_iterate.getParent().setLeft(node_to_iterate);
+                              }else if (current.getParent().getRight().getLeft().getData() == left_node.getData()){ 
+                                  node_to_iterate.getParent().setRight(node_to_iterate);
+                              }
+      
+                          }   
+
+                      }
+                      
+                  }
+                  
+                  current.setParent(null);
+                  current.setLeft(null);
+                  current.setRight(null);
+                  return;
+  
+              }
+          }
+              // one child (left child)
+              if(current.getLeft() != null && current.getRight() == null){
+                  current.getLeft().setParent(current.getParent());
+                  if(current.getParent().getRight() != null && current.getParent().getRight().getData() == current.getData()){
+                      current.getParent().setRight(current.getLeft());
+                  }
+                  if(current.getParent().getLeft() != null && current.getParent().getLeft().getData() == current.getData()){
+                      current.getParent().setLeft(current.getLeft());
+                  }
+                  current.setLeft(null);
+                  current.setParent(null);
+                  return;
+              }
+              // one child (right child)
+              if(current.getRight() != null && current.getLeft() == null){
+                  current.getRight().setParent(current.getParent());
+                  if(current.getParent().getRight() != null && current.getParent().getRight().getData() == current.getData()){
+                      current.getParent().setRight(current.getRight());
+                  }
+                  if(current.getParent().getLeft() != null && current.getParent().getLeft().getData() == current.getData()){
+                      current.getParent().setLeft(current.getRight());
+                  }
+                  current.setRight(null);
+                  current.setParent(null);
+                  return;
+              }
+              // leaf
+              if(current.getLeft() == null && current.getRight() == null){
+                  TNode parent  = current.getParent();
+                  if (parent.getLeft() != null && parent.getLeft().getData() == current.getData()){
+                      parent.setLeft(null);
+                      current.setParent(null);
+                      return;
+                  }
+                  if(parent.getRight() != null && parent.getRight().getData() == current.getData()){
+                      parent.setRight(null);
+                      current.setParent(null);
+                      return;
+                  }
+              }
+          
+          }
+      System.out.println("Node to delete doesn't exist");
+  }
 }
