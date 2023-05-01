@@ -116,4 +116,18 @@ public class AVL extends BST{
     node.setBalance(node.getBalance() - 1 - Math.max(0, right.getBalance()));
     right.setBalance(right.getBalance() - 1 + Math.min(0, node.getBalance()));
   }
+
+  @Override
+  public void insert(TNode node) {
+      super.insert(node);
+      updateBalance(node);
+  }
+
+  @Override
+  public void insert(int val) {
+      TNode node = new TNode(val,0,null,null,null);
+      super.insert(val);
+      updateBalance(node);
+  }
+
 }
