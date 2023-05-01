@@ -3,7 +3,7 @@ package com.example.DataStructures.trees;
 import com.example.DataStructures.nodes.TNode;
 
 public class AVL extends BST{
-  
+
   private TNode root;
 
   public AVL(){
@@ -20,5 +20,15 @@ public class AVL extends BST{
       if (node.getLeft() != null) insert(node.getLeft());
       if (node.getRight() != null) insert(node.getRight());
       
+  }
+
+  @Override
+    public TNode getRoot() {
+        return super.getRoot();
+    }
+
+  @Override
+  public TNode setRoot(TNode node) {
+      return super.setRoot(node);
   }
 }
