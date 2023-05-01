@@ -228,4 +228,36 @@ public class BST {
         }
     }
   }
+  public void printBF(){
+    if(root == null)
+        return;
+      
+    // Create an empty queue for level order traversal
+    Queue<TNode> q =new LinkedList<TNode>();
+    // Enqueue Root and initialize height
+    q.add(this.root);
+      
+      
+    while(true)
+    {
+        // nodeCount (queue size) indicates number of nodes
+        // at current level.
+        int nodeCount = q.size();
+        if(nodeCount == 0)
+            break;
+
+        while(nodeCount > 0)
+        {
+            TNode node = q.peek();
+            System.out.print(node.getData()+ " ");
+            q.remove();
+            if(node.getLeft() != null)
+                q.add(node.getLeft());
+            if(node.getRight() != null)
+                q.add(node.getRight());
+            nodeCount--;
+        }
+        System.out.println();
+    }
+  }
 }
