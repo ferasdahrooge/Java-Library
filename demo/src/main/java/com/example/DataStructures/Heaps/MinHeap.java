@@ -37,5 +37,14 @@ public class MinHeap{
         }
         return (i - 1) / 2;
     }
+    // get left child
+    private int left(int i) {
+      return (2*i + 1);
+    }
+  
+    // get right child
+    private int right(int i){
+        return (2*i +2);
+    }
 
 }
