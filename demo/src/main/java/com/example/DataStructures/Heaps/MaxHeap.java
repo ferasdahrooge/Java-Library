@@ -185,4 +185,13 @@ public class MaxHeap {
 
   }
 
+  private Vector<Integer> heapify(int[] array){
+    MaxHeap vec = new MaxHeap();
+
+    for (int elem : array){
+        vec.insert(elem);
+    }
+    return vec.elements;
+  }
+
 }
