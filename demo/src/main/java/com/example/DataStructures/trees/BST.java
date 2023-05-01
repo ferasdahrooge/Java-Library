@@ -193,4 +193,24 @@ public class BST {
           }
       System.out.println("Node to delete doesn't exist");
   }
+
+  public TNode search(int val){
+    if (root == null) return null;
+
+    TNode current = root;
+    TNode node = new TNode(val,0,null,null,null);
+    while (current.getLeft() != null || current.getRight() != null){
+        if (node.getData() < current.getData()){
+            current = current.getLeft();
+        } else{
+            current = current.getRight();
+        } 
+        if (current.getData() == node.getData()){
+            System.out.println("Node of data: " + val + " Found");
+            return node;
+        }
+    }
+    System.out.println("Node of Data: " + val + " not Found");
+    return null;
+}
 }
