@@ -68,5 +68,13 @@ public class MinHeap{
       System.out.println("Value " + i + " does not exists");
       return 0;
     }
+    public boolean isEmpty(){
+      if (elements == null){
+          System.out.println("Vector Empty");
+          return true;
+      }
+      System.out.println("Vector not Empty");
+      return false;
+    }
 
 }
