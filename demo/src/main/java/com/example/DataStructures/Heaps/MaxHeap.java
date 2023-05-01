@@ -113,4 +113,20 @@ public class MaxHeap {
     return 0;
   }
 
+  public void delete(Integer key){
+        
+    if(!elements.contains(key)){
+        System.out.println("Doesn't Exist");
+        return;  
+    } 
+
+    Integer i = elements.indexOf(key);
+    swap(getSize()-1 ,i);
+    // Decrease size of heap by 1
+    elements.setSize(getSize()-1);
+    // heapify down
+    heapify_down(0);
+    return;
+}
+
 }
