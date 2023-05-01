@@ -212,5 +212,20 @@ public class BST {
     }
     System.out.println("Node of Data: " + val + " not Found");
     return null;
-}
+  }
+
+  public void printInorder(){
+    Stack<TNode> nodes = new Stack<>();
+    TNode current = this.root;
+    while (!nodes.isEmpty() || current != null){
+        if (current != null) {
+            nodes.push(current);
+            current = current.getLeft();
+        } else {
+            TNode node = nodes.pop();
+            System.out.println(node);
+            current = node.getRight();
+        }
+    }
+  }
 }
