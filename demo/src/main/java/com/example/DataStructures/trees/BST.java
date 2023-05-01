@@ -54,5 +54,28 @@ public class BST {
     } else{
         traversedNode.setRight(node);
     }
-}
+  }
+
+    public void insert(TNode node){
+      TNode traversedNode = null;
+      TNode top = this.root;
+
+      while(top != null){
+          traversedNode = top;
+          if(node.getData() < top.getData()){
+              top = top.getLeft();
+          } else{
+              top = top.getRight();
+          }
+      }
+
+      node.setParent(traversedNode);
+      if (traversedNode == null){
+          root = node;
+      } else if (node.getData() < traversedNode.getData()){
+          traversedNode.setLeft(node);
+      } else{
+          traversedNode.setRight(node);
+      }
+    }
 }
