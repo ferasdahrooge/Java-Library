@@ -33,6 +33,7 @@ public class MaxHeap {
         return (i - 1) / 2;
   }
 
+
   private int left(int i) {
     return (2*i + 1);
   }
@@ -84,6 +85,23 @@ public class MaxHeap {
           // call heapify-up on the parent
           heapify_up(parent(i));
       }
+  }
+
+  public boolean isEmpty(){
+    if (elements == null){
+        System.out.println("Vector Empty");
+        return true;
+    }
+    System.out.println("Vector not Empty");
+    return false;
+  }
+
+  public void insert(Integer key)
+  {
+      // insert a new element at the end of the vector
+      elements.addElement(key);
+      int index = getSize() - 1;
+      heapify_up(index);
   }
 
 }
