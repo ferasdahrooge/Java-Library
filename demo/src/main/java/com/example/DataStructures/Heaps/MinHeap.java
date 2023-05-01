@@ -152,4 +152,45 @@ public class MinHeap{
       return;
     } 
 
+    public void sort(){
+      for (int i = 1; i < getSize(); i++)
+      {
+        // if child is bigger than parent
+        if (elements.get(i) > elements.get((i - 1) / 2))
+        {
+          int j = i;
+   
+          // close to heapify but to turn it into a max heap
+          while (elements.get(j) > elements.get((j - 1) / 2))
+          {
+            swap(j, (j-1)/2);
+            j = (j - 1) / 2;
+          }
+        }
+      }
+     for (int i = getSize() - 1 ; i > 0; i-- ){
+
+          swap(0, i);
+          // similar to the heapify method going down
+          // but taking into account the size is adjusted after every loop
+          int j = 0, index;
+
+          // loop through the heap by taking the new left position
+          do{
+              index = left(j);
+              // index is the left position
+              if(index < (i-1) && elements.get(index) < elements.get(index+1)) index++;
+              
+              // apply swapping 
+              // System.out.println(j);
+              if (index < i && elements.get(j) < elements.get(index)) {
+                  swap(j, index);
+              }
+              j = index;
+          
+          } while(index < i);
+      }
+
+  }
+
 }
