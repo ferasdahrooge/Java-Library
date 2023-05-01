@@ -75,4 +75,15 @@ public class MaxHeap {
       }
   }
 
+  private void heapify_up(int i)
+  {
+      if (i > 0 && elements.get(parent(i)) < elements.get(i))
+      {
+          // swap the two if heap property is violated
+          swap(i, parent(i));
+          // call heapify-up on the parent
+          heapify_up(parent(i));
+      }
+  }
+
 }
