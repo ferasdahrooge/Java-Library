@@ -24,6 +24,13 @@ public class MaxHeap {
   public void clear(){
     elements.setSize(0);
     return;
-}
+  }
+  private int parent(int i)
+    {
+        if (i == 0) {
+            return -1;
+        }
+        return (i - 1) / 2;
+  }
 
 }
