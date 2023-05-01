@@ -42,6 +42,14 @@ public class MaxHeap {
   }
   public int getSize(){
     return elements.size();
-}
+  }
+
+  private void swap(int x, int y)
+  {
+      // swap with a child having greater value
+      Integer temp = elements.get(x);
+      elements.setElementAt(elements.get(y), x);
+      elements.setElementAt(temp, y);
+  }
 
 }
