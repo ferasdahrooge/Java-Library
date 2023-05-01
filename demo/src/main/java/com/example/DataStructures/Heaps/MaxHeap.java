@@ -52,4 +52,27 @@ public class MaxHeap {
       elements.setElementAt(temp, y);
   }
 
+  private void heapify_down(int i)
+  {
+      int left = left(i);
+      int right = right(i);
+
+      int largest = i;
+
+      if (left < getSize() && elements.get(left) > elements.get(i)) {
+          largest = left;
+      }
+
+      if (right < getSize() && elements.get(right) > elements.get(largest)) {
+          largest = right;
+      }
+      if (largest != i)
+      {
+          // swap with a child having greater value
+          swap(i, largest);
+          // call heapify-down on the child
+          heapify_down(largest);
+      }
+  }
+
 }
