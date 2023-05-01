@@ -52,4 +52,12 @@ public class MinHeap{
       return elements.size();
     }
 
+    // swap contents of indicies
+    private void swap(int x, int y)
+    {
+        Integer temp = elements.get(x);
+        elements.setElementAt(elements.get(y), x);
+        elements.setElementAt(temp, y);
+    }
+
 }
