@@ -76,5 +76,14 @@ public class MinHeap{
       System.out.println("Vector not Empty");
       return false;
     }
+  
+    private void heapifyUp(int i){   
+      if (i > 0 && elements.get(parent(i)) > elements.get(i)){
+          // swap between the elements
+          swap(i, parent(i));
+          // recursion method to 
+          heapifyUp(parent(i));
+      }
+    }
 
 }
