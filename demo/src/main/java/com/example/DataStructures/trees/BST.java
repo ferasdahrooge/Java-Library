@@ -24,4 +24,12 @@ public class BST {
         this.root = node;
   }
 
+  public TNode getRoot(){
+    return this.root;
+}
+
+  public TNode setRoot(TNode node){
+    return this.root = node;
+  }
+
 }
