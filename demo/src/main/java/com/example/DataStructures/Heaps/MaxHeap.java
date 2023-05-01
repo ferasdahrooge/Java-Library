@@ -40,5 +40,8 @@ public class MaxHeap {
   private int right(int i){
     return (2*i +2);
   }
+  public int getSize(){
+    return elements.size();
+}
 
 }
