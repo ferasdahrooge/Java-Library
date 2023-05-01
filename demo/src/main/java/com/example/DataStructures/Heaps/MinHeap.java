@@ -192,5 +192,13 @@ public class MinHeap{
       }
 
   }
+  private Vector<Integer> heapify(int[] array){
+    MinHeap vec = new MinHeap();
+
+    for (int elem : array){
+        vec.insert(elem);
+    }
+    return vec.elements;
+  }
 
 }
